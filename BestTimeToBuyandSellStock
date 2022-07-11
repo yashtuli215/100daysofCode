@@ -1,0 +1,15 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int ans =0;
+        int minimumsofar = prices[0];
+        for(int i =1;i<prices.length;i++){
+            int CurrentProfit = prices[i] - minimumsofar;
+            if(CurrentProfit>ans){
+                ans = CurrentProfit;
+            }
+            minimumsofar= Math.min(minimumsofar,prices[i]);
+        }
+        return ans;
+    }
+    
+}
